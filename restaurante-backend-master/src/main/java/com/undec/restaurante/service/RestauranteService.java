@@ -9,10 +9,6 @@ public class RestauranteService {
     @Autowired
     private RestauranteRepository restauranteRepository;
 
-    public Restaurante findOne(Integer id) {
-        Restaurante restaurante= restauranteRepository.getOne(id);
-        return restaurante;
-    }
     public String delete(Restaurante r) {
         restauranteRepository.delete(r);
         return "Borrado";

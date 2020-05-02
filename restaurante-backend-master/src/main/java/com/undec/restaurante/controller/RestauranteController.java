@@ -14,23 +14,6 @@ public class RestauranteController {
     @Autowired
     private RestauranteService restauranteService;
 
-    //Consulto solo uno por identificador
-    @GetMapping("/restaurante/{id}")
-    public ResponseEntity<Restaurante> getrestoById(@PathVariable(value = "id") Integer restauranteId) {
-        System.out.println("entro por getid-----------------------------------------------------------");
-
-        Restaurante restaurante = restauranteService.findOne(restauranteId);
-
-        System.out.println("entro por getid----------2-------------------------------------------------"+restaurante.getDescripcion());
-        if(restaurante == null) {
-            System.out.println("entro por getid---------3--------------------------------------------------");
-            return ResponseEntity.notFound().build();
-        }
-        System.out.println("entro por getid-------------------4----------------------------------------");
-        return ResponseEntity.ok(restaurante);
-
-    }
-
     //crea un solo restaurante
     @PostMapping("/restaurante")
     public String create(@Valid @RequestBody Restaurante restaurante) {
@@ -39,7 +22,7 @@ public class RestauranteController {
     }
 
     //Actualiza
-    @PutMapping("/restaurantes/{id}")
+    /*@PutMapping("/restaurantes/{id}")
     public ResponseEntity<Restaurante> update(@PathVariable(value = "id") Integer restauranteId,
                                               @Valid @RequestBody Restaurante restauranteRestaurante) {
         Restaurante restaurante = restauranteService.findOne(restauranteId);
@@ -55,10 +38,10 @@ public class RestauranteController {
 
         restauranteService.save(restaurante);
         return ResponseEntity.ok(restaurante);
-    }
+    }*/
 
     //borra
-    @DeleteMapping("/restaurantes/{id}")
+    /*@DeleteMapping("/restaurantes/{id}")
     public ResponseEntity<Restaurante> delete(@PathVariable(value = "id") Integer restauranteId) {
         Restaurante restaurante = restauranteService.findOne(restauranteId);
         if(restaurante == null) {
@@ -73,6 +56,6 @@ public class RestauranteController {
     @GetMapping("/restaurante/precio/{precio}")
     public List<Restaurante> getRestoByPrecio(@PathVariable(value = "precio") String precio){
         return restauranteService.BuscarRestaurantePrecio(precio);
-    }
+    }*/
 
 }
