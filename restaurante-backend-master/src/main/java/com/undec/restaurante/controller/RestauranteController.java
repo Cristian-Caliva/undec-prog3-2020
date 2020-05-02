@@ -14,13 +14,6 @@ public class RestauranteController {
     @Autowired
     private RestauranteService restauranteService;
 
-    //crea un solo restaurante
-    @PostMapping("/restaurante")
-    public String create(@Valid @RequestBody Restaurante restaurante) {
-
-        return restauranteService.save(restaurante);
-    }
-
     //Actualiza
     /*@PutMapping("/restaurantes/{id}")
     public ResponseEntity<Restaurante> update(@PathVariable(value = "id") Integer restauranteId,

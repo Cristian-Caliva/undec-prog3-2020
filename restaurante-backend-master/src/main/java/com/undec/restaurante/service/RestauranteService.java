@@ -14,10 +14,6 @@ public class RestauranteService {
         return "Borrado";
     }
 
-    public String save(Restaurante r) {
-        restauranteRepository.save(r);
-        return "Insertado";
-    }
 
     public List<Restaurante> BuscarRestaurantePrecio(String precio){
         return restauranteRepository.findAllByPrecio(precio);
