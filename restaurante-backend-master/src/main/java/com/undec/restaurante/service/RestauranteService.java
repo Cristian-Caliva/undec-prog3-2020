@@ -8,10 +8,6 @@ import java.util.List;
 public class RestauranteService {
     @Autowired
     private RestauranteRepository restauranteRepository;
-    public List<Restaurante> findAll() {
-        List<Restaurante> restauranteList = restauranteRepository.findAll();
-        return restauranteList;
-    }
 
     public Restaurante findOne(Integer id) {
         Restaurante restaurante= restauranteRepository.getOne(id);

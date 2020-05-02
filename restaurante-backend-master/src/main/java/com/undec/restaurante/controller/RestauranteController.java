@@ -8,17 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 @RestController
-@RequestMapping("/restaurantes")
+@RequestMapping("/restaurante")
 public class RestauranteController {
 
     @Autowired
     private RestauranteService restauranteService;
-
-    @GetMapping
-    public List<Restaurante> list() {
-        List<Restaurante> restauranteList = restauranteService.findAll();
-        return restauranteList;
-    }
 
     //Consulto solo uno por identificador
     @GetMapping("/restaurante/{id}")
