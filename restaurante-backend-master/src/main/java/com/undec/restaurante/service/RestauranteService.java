@@ -9,11 +9,6 @@ public class RestauranteService {
     @Autowired
     private RestauranteRepository restauranteRepository;
 
-    public String delete(Restaurante r) {
-        restauranteRepository.delete(r);
-        return "Borrado";
-    }
-
 
     public List<Restaurante> BuscarRestaurantePrecio(String precio){
         return restauranteRepository.findAllByPrecio(precio);
