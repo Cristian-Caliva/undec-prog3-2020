@@ -10,7 +10,7 @@ import java.util.Date;
 public class VueloTest {
     @Test
 
-    public void  instanciaVuelo_datosCompletos_instanciaCorrecta(){
+    public void  instanciaVuelo_datosCompletos_instanciaCorrecta() throws VueloIncompletoException {
         LocalDateTime fechaHoraSalida = LocalDateTime.of(2020, 6, 15, 18, 30);
         LocalDateTime fechaHoraLlegada = LocalDateTime.of(2020, 6, 15, 22, 00);
         Aeropuerto aeropuertoSalida = new Aeropuerto("EZE", "Pajas Blancas", "Cordoba", 5000);
@@ -44,13 +44,11 @@ public class VueloTest {
             e.printStackTrace();
         }
         Aerolinea aerolinea = new Aerolinea("30-64140555-4", "AV", "Aerolineas Argentinas", fechaInicio);
-        Vuelo vuelo = new Vuelo("AV 1234", fechaHoraSalida, fechaHoraLlegada, aeropuertoSalida, aeropuertoLlegada, avion, comandante, copiloto, aerolinea);
+        Vuelo vuelo = Vuelo.instancia("AV 1234", fechaHoraSalida, fechaHoraLlegada, aeropuertoSalida, aeropuertoLlegada, avion, comandante, copiloto, aerolinea);
 
         Assertions.assertNotNull(vuelo);
 
-
-
-
     }
+
 
 }
