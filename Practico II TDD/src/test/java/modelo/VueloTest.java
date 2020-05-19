@@ -54,5 +54,10 @@ public class VueloTest {
 
     }
 
+    @Test
+    public void instanciaVuelo_datosIncompletos_devuelveExcepcion(){
+        Assertions.assertThrows(VueloIncompletoException.class, () -> Vuelo.instancia(" ", null, null, null, null, null, null, null));
+    }
+
 
 }

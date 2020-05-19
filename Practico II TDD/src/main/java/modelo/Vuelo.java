@@ -3,7 +3,6 @@ package modelo;
 import excepciones.VueloIncompletoException;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,11 +29,11 @@ public class Vuelo {
     }
 
     public static Vuelo instancia(String codigoVuelo, LocalDateTime fechaHoraSalida, LocalDateTime fechaHoraLlegada, Aeropuerto aeropuertoSalida, Aeropuerto aeropuertoLlegada, Avion avion, List<Piloto> pilotos, Aerolinea aerolinea) throws VueloIncompletoException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        /*DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         String fecHoraSalida = fechaHoraSalida.format(formatter);
         String fecHoraLlegada = fechaHoraLlegada.format(formatter);
-        int cantPilotos = pilotos.size();
-        if(codigoVuelo.isEmpty()||fecHoraSalida.isEmpty()||fecHoraLlegada.isEmpty()||aeropuertoSalida.equals(null)||aeropuertoLlegada.equals(null)||avion.equals(null)||cantPilotos < 2|| aerolinea.equals(null)){
+        int cantPilotos = pilotos.size();*/
+        if(codigoVuelo.isEmpty()||fechaHoraSalida == null||fechaHoraLlegada == null||aeropuertoSalida == null||aeropuertoLlegada == null||avion == null||pilotos == null|| aerolinea == null){
             throw new VueloIncompletoException();
         }
         return new Vuelo(codigoVuelo, fechaHoraSalida, fechaHoraLlegada, aeropuertoSalida, aeropuertoLlegada, avion, pilotos, aerolinea);
