@@ -39,4 +39,20 @@ public class Vuelo {
         }
         return new Vuelo(codigoVuelo, fechaHoraSalida, fechaHoraLlegada, aeropuertoSalida, aeropuertoLlegada, avion, pilotos, aerolinea);
     }
+
+    public String getCodigoVuelo() {return codigoVuelo;}
+
+    public LocalDateTime getFechaHoraSalida() {return fechaHoraSalida;}
+
+    public LocalDateTime getFechaHoraLlegada() {return fechaHoraLlegada;}
+
+    public Aeropuerto getAeropuertoSalida() {return aeropuertoSalida;}
+
+    public Aeropuerto getAeropuertoLlegada() {return aeropuertoLlegada;}
+
+    public Avion getAvion() {return avion;}
+
+    public List<Piloto> getPilotos() {return pilotos;}
+
+    public Aerolinea getAerolinea() {return aerolinea;}
 }
