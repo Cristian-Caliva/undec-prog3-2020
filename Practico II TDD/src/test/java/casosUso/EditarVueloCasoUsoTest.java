@@ -66,14 +66,33 @@ public class EditarVueloCasoUsoTest {
             e.printStackTrace();
         }
         Aerolinea aerolinea = new Aerolinea("30-64140555-4", "AV", "Aerolineas Argentinas", fechaInicio);
-
-
-
         Vuelo vueloViejoModificar = Vuelo.instancia("AV 1234", fechaHoraSalida, fechaHoraLlegada, aeropuertoSalida, aeropuertoLlegada, avion, pilotos, aerolinea);
+
+
 
         LocalDateTime fechaHoraSalidaActualizada = LocalDateTime.of(2020, 6, 20, 10, 30);
         LocalDateTime fechaHoraLlegadaActualizada = LocalDateTime.of(2020, 6, 20, 14, 00);
-        Vuelo vueloNuevosDatos = Vuelo.instancia("AV 1234", fechaHoraSalidaActualizada, fechaHoraLlegadaActualizada, aeropuertoSalida, aeropuertoLlegada, avion, pilotos, aerolinea);
+        Avion avionActualizado = new Avion("VO-JXO", "Airbus Z608", 145, 2009);
+        List<Piloto> pilotosUpdates = new ArrayList<Piloto>();
+        //SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        //Date fechaNacimiento=null;
+        try {
+            fechaNacimiento1 = formato.parse("1984-12-01");
+            fechaNacimiento = fechaNacimiento1;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        pilotosUpdates.add(new Piloto("20-33934001-6", 23456007, "Armani", "Franco", fechaNacimiento));
+        //SimpleDateFormat formato1 = new SimpleDateFormat("yyyy-MM-dd");
+        //Date fechaNacimiento1=null;
+        try {
+            Date fechaNacimiento2 = formato1.parse("1984-12-01");
+            fechaNacimiento1 = fechaNacimiento2;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        pilotosUpdates.add(new Piloto("30-40106701-6", 89023456, "Martinez", "Pity", fechaNacimiento1));
+        Vuelo vueloNuevosDatos = Vuelo.instancia("AV 1234", fechaHoraSalidaActualizada, fechaHoraLlegadaActualizada, aeropuertoSalida, aeropuertoLlegada, avionActualizado, pilotosUpdates, aerolinea);
 
         when(iRepositorioConsultarVueloPorCodigoVuelo.findByCodigoVuelo(vueloViejoModificar.getCodigoVuelo())).thenReturn(vueloViejoModificar);
         when(iRepositorioEditarVuelo.update(vueloViejoModificar)).thenReturn(true);
