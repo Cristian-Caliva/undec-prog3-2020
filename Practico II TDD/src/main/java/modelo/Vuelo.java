@@ -54,4 +54,15 @@ public class Vuelo {
     public List<Piloto> getPilotos() {return pilotos;}
 
     public Aerolinea getAerolinea() {return aerolinea;}
+
+    public void modificarDatos(Vuelo vueloNuevosDatos) {
+        this.codigoVuelo = vueloNuevosDatos.getCodigoVuelo();
+        this.fechaHoraSalida = vueloNuevosDatos.getFechaHoraSalida();
+        this.fechaHoraLlegada = vueloNuevosDatos.getFechaHoraLlegada();
+        this.aeropuertoSalida = vueloNuevosDatos.getAeropuertoSalida();
+        this.aeropuertoLlegada = vueloNuevosDatos.getAeropuertoLlegada();
+        this.pilotos = vueloNuevosDatos.getPilotos();
+        this.avion = vueloNuevosDatos.getAvion();
+        this.aerolinea = vueloNuevosDatos.getAerolinea();
+    }
 }
