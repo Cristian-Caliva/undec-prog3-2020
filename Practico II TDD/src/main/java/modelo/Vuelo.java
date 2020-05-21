@@ -65,4 +65,6 @@ public class Vuelo {
         this.avion = vueloNuevosDatos.getAvion();
         this.aerolinea = vueloNuevosDatos.getAerolinea();
     }
+
+
 }
